@@ -1,6 +1,13 @@
 package com.example.lab2_20170404_iot;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,17 +15,56 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.lab2_20170404_iot.R;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        if(hayInternet()){
+            Toast.makeText(this,"Success: Tiene internet", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this,"Error: No tiene internet", Toast.LENGTH_LONG).show();
+        }
+
+        Button contador = findViewById(R.id.button_contador);
+        contador.setOnClickListener(view -> {
+            Intent intent_cont = new Intent(MainActivity.this, ContadorActivity.class);
+            startActivity(intent_cont);
         });
+
+        Button buscar_pelis = findViewById(R.id.button_buscador);
+        buscar_pelis.setOnClickListener(view -> {
+            Intent intent_busc = new Intent(MainActivity.this, BuscadorPelisActivity.class);
+            startActivity(intent_busc);
+        });
+
+
+
+
     }
+
+    public boolean hayInternet(){
+        ConnectivityManager manager =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetworkInfo = manager.getActiveNetworkInfo();
+        boolean tieneInternet = activeNetworkInfo != null && activeNetworkInfo.isConnected();
+
+        Log.d("msg-test","Internet: " + tieneInternet);
+        return tieneInternet;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(MainActivity.this, "Esta en la pagina de inicio de la app",Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
 }
