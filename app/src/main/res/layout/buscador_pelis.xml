@@ -216,6 +216,7 @@
                         android:fontFamily="@font/comfortaa"
                         android:gravity="center"
                         android:text="Trama de la película"
+                        android:textColor="#4A2748"
                         android:textStyle="bold" />
 
                     <TextView
@@ -238,35 +239,129 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
         android:layout_width="345dp"
-        android:layout_height="135dp"
+        android:layout_height="150dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822"/>
+        app:layout_constraintVertical_bias="0.793">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="Ratings de la Película (Fuente/Validación)"
+                android:textColor="#4A2748"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.141" />
+
+            <LinearLayout
+                android:layout_width="347dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tit_int_mov_database"
+                        android:layout_width="121dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/comfortaa"
+                        android:paddingLeft="15dp"
+                        android:text="Internet Movie Database" />
+
+                    <TextView
+                        android:id="@+id/int_mov_database"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/comfortaa"
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tit_rottentomatoes"
+                        android:layout_width="121dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/comfortaa"
+                        android:paddingLeft="15dp"
+                        android:text="Rotten Tomatoes" />
+
+                    <TextView
+                        android:id="@+id/rotten_tomatoes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/comfortaa"
+                        android:text="TextView" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:fontFamily="@font/comfortaa"
+
+                    android:gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="178dp"
-        android:layout_height="48dp"
+        android:layout_width="184dp"
+        android:layout_height="60dp"
+        android:buttonTint="#91628F"
+        android:checked="false"
+        android:fontFamily="@font/comfortaa"
         android:text="Estas conforme con la Informacion Brindada"
+        app:centerIfNoTextEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
+        app:layout_constraintVertical_bias="0.958" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#F4DECB"
         android:text="Regresar"
+        android:textColor="#4A2748"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
+        app:layout_constraintVertical_bias="0.949" />
 </androidx.constraintlayout.widget.ConstraintLayout>
