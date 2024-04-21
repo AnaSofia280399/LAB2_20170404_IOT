@@ -206,7 +206,7 @@
             </HorizontalScrollView>
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/ingresar_imdb"
                 android:layout_width="173dp"
                 android:layout_height="38dp"
                 android:ems="10"

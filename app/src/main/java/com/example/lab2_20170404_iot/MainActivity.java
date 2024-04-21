@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -36,10 +37,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent_cont);
         });
 
+
         Button buscar_pelis = findViewById(R.id.button_buscador);
+        EditText editText = findViewById(R.id.ingresar_imdb);
         buscar_pelis.setOnClickListener(view -> {
+
+            String movieId = editText.getText().toString();
+
             Intent intent_busc = new Intent(MainActivity.this, BuscadorPelisActivity.class);
+            intent_busc.putExtra("idmb_peli", movieId);
             startActivity(intent_busc);
+
+
         });
 
 
